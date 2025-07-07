@@ -1,0 +1,14 @@
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\bin\Debug\net8.0\CMS.DataModel.deps.json
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\bin\Debug\net8.0\CMS.DataModel.runtimeconfig.json
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\bin\Debug\net8.0\CMS.DataModel.dll
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\bin\Debug\net8.0\CMS.DataModel.pdb
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.csproj.AssemblyReference.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.AssemblyInfoInputs.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.AssemblyInfo.cs
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.csproj.CoreCompileInputs.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.dll
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\refint\CMS.DataModel.dll
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.pdb
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\CMS.DataModel.genruntimeconfig.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.DataModel\obj\Debug\net8.0\ref\CMS.DataModel.dll

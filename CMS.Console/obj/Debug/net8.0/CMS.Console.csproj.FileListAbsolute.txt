@@ -1,0 +1,17 @@
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\bin\Debug\net8.0\CMS.Console.exe
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\bin\Debug\net8.0\CMS.Console.deps.json
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\bin\Debug\net8.0\CMS.Console.runtimeconfig.json
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\bin\Debug\net8.0\CMS.Console.dll
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\bin\Debug\net8.0\CMS.Console.pdb
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.csproj.AssemblyReference.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.AssemblyInfoInputs.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.AssemblyInfo.cs
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.csproj.CoreCompileInputs.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Cons.AACD226E.Up2Date
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.dll
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\refint\CMS.Console.dll
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.pdb
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\CMS.Console.genruntimeconfig.cache
+C:\Users\Alok\Desktop\dev_online\CMS-project-all_details\CMS\CMS\CMS.Console\obj\Debug\net8.0\ref\CMS.Console.dll
