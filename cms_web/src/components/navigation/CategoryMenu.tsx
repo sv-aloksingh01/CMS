@@ -97,8 +97,7 @@ function CategoryMenu({ isOpen, onClose }: CategoryMenuProps) {
           {/* Footer */}
           <div className="p-4 border-t border-gray-200">
             <div className="text-xs text-gray-500 text-center">
-              <p>Browse {categories.length - 1} categories</p>
-              <p className="mt-1">+ Trending articles</p>
+              <b><p className="mt-1">More exciting content coming soon!</p></b>
             </div>
           </div>
         </div>

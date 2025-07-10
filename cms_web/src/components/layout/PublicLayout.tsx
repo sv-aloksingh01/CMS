@@ -40,7 +40,7 @@ function PublicLayout({ children }: PublicLayoutProps) {
 
                 <Link to="/articles" className="flex items-center">
                   <FileText className="h-8 w-8 text-blue-600 mr-3" />
-                  <h1 className="text-xl font-semibold text-gray-900">CMS Articles</h1>
+                  <h1 className="text-xl font-semibold text-gray-900">DecodeGk</h1>
                 </Link>
               </div>
               
