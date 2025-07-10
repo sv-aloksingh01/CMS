@@ -16,24 +16,25 @@ namespace CMS.Service.Services
             _context = context;
         }
 
-        public async Task<List<ArticleDto>> GetAllAsync()
+        public async Task<List<ArticleResponseDto>> GetAllAsync()
         {
             return await _context.Articles
                 .Where(a => a.IsActive)
                 .Include(a => a.Category)
                 .Include(a => a.ArticleTags)
                     .ThenInclude(at => at.Tag)
-                .Select(a => new ArticleDto
+                .Select(a => new ArticleResponseDto
                 {
                     Id = a.Id,
                     Title = a.Title,
                     Content = a.Content,
                     CategoryName = a.Category.Name,
-                    Tags = a.ArticleTags.Select(at => at.Tag.Name).ToList()
+                    Tags = a.ArticleTags.Select(at => at.Tag.Name).ToList(),
+                    CreatedAt = a.CreatedAt
                 }).ToListAsync();
         }
 
-        public async Task<ArticleDto?> GetByIdAsync(int id)
+        public async Task<ArticleResponseDto?> GetByIdAsync(int id)
         {
             var article = await _context.Articles
                 .Include(a => a.Category)
@@ -43,13 +44,14 @@ namespace CMS.Service.Services
 
             if (article == null) return null;
 
-            return new ArticleDto
+            return new ArticleResponseDto
             {
                 Id = article.Id,
                 Title = article.Title,
                 Content = article.Content,
                 CategoryName = article.Category.Name,
-                Tags = article.ArticleTags.Select(at => at.Tag.Name).ToList()
+                Tags = article.ArticleTags.Select(at => at.Tag.Name).ToList(),
+                CreatedAt = article.CreatedAt
             };
         }
 
@@ -96,7 +98,7 @@ namespace CMS.Service.Services
             return article.Id;
         }
 
-        public async Task<bool> UpdateArticleAsync(int id, UpdateArticleDto request)
+        public async Task<bool> UpdateArticleAsync(int id, UpdateArticleRequestDto request)
         {
             var article = await _context.Articles
                 .Include(a => a.ArticleTags)

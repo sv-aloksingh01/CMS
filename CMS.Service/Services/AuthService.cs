@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using BCrypt.Net;
 using CMS.DTOs.Configurations;
 using Microsoft.Extensions.Options;
+using CMS.DTOs;
 
 namespace CMS.Service.Services
 {
@@ -29,15 +30,28 @@ namespace CMS.Service.Services
             _jwtSettings = jwtOptions.Value;
         }
 
-        public async Task<string> AuthenticateAsync(string username, string password)
+        public async Task<LoginResponseDto> AuthenticateAsync(string username, string password)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
-                return string.Empty;
+                return new LoginResponseDto();
 
             // ✅ Use the existing method
-            return GenerateJwtToken(user);
+            string token =  GenerateJwtToken(user);
+
+            LoginResponseDto loginResponseDto = new LoginResponseDto
+            {
+                Token = token,
+                User = new UserResponse
+                {
+                    Id = user.Id,
+                    Username = user.Username,
+                    Email = user.Email
+                }
+            };
+
+            return loginResponseDto;
         }
 
         /*

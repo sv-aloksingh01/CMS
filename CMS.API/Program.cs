@@ -92,13 +92,26 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowFrontend",
+//        policy => policy.WithOrigins("http://localhost:3000") // React dev server
+//                         .AllowAnyHeader()
+//                         .AllowAnyMethod());
+//});
+
+// CORS setup
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy => policy.WithOrigins("http://localhost:3000") // React dev server
-                         .AllowAnyHeader()
-                         .AllowAnyMethod());
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); // only if you're using cookies
+    });
 });
+
 
 
 builder.Services.AddAuthorization();

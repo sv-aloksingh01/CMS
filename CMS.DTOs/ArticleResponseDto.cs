@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace CMS.DTOs
 {
-    public class UpdateArticleDto
+    public class ArticleResponseDto
     {
+        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public string Content { get; set; } = null!;
         public string CategoryName { get; set; } = null!;
-        public List<string>? TagNames { get; set; } = new();
-        //public string? Slug { get; set; }  // slug for SEO, optional
+        public List<string> Tags { get; set; } = new();
+        public DateTime? CreatedAt { get; set; }
     }
 }

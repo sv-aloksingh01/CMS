@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMS.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace CMS.Service.Interfaces
 {
     public interface IAuthService
     {
-        Task<string> AuthenticateAsync(string username, string password);
+        Task<LoginResponseDto> AuthenticateAsync(string username, string password);
     }
 }

@@ -9,10 +9,10 @@ namespace CMS.Service.Interfaces
 {
     public interface IArticleService
     {
-        Task<List<ArticleDto>> GetAllAsync();
-        Task<ArticleDto?> GetByIdAsync(int id);
+        Task<List<ArticleResponseDto>> GetAllAsync();
+        Task<ArticleResponseDto?> GetByIdAsync(int id);
         Task<int> CreateAsync(CreateArticleRequestDto request);
-        Task<bool> UpdateArticleAsync(int id, UpdateArticleDto dto);
+        Task<bool> UpdateArticleAsync(int id, UpdateArticleRequestDto dto);
         Task<bool> DeleteArticleAsync(int id);
     }
 }

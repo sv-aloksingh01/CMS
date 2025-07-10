@@ -33,12 +33,12 @@ namespace CMS.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var token = await _authService.AuthenticateAsync(request.Username.Trim(), request.Password.Trim());
+            var response = await _authService.AuthenticateAsync(request.Username.Trim(), request.Password.Trim());
 
-            if (string.IsNullOrEmpty(token))
+            if (string.IsNullOrEmpty(response.Token))
                 return Unauthorized(new { message = "Invalid username or password" });
 
-            return Ok(new { token });
+            return Ok(response);
         }
 
         /// <summary>

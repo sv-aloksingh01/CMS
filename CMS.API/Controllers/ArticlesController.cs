@@ -20,7 +20,7 @@ namespace CMS.API.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        [ProducesResponseType(typeof(List<ArticleDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<ArticleResponseDto>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll()
         {
             var articles = await _articleService.GetAllAsync();
@@ -29,7 +29,7 @@ namespace CMS.API.Controllers
 
         [HttpGet("{id}")]
         [AllowAnonymous]
-        [ProducesResponseType(typeof(ArticleDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ArticleResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById(int id)
         {
@@ -58,7 +58,7 @@ namespace CMS.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateArticle(int id, [FromBody] UpdateArticleDto dto)
+        public async Task<IActionResult> UpdateArticle(int id, [FromBody] UpdateArticleRequestDto dto)
         {
             var success = await _articleService.UpdateArticleAsync(id, dto);
             if (!success)

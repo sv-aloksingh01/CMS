@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace CMS.API.Validators
 {
-    public class UpdateArticleRequestValidator : AbstractValidator<UpdateArticleDto>
+    public class UpdateArticleRequestValidator : AbstractValidator<UpdateArticleRequestDto>
     {
         public UpdateArticleRequestValidator()
         {
