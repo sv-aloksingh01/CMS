@@ -1,6 +1,60 @@
-@CMS.API_HostAddress = http://localhost:5295
+﻿@CMS.API_HostAddress = https://localhost:7001/api
 
-GET {{CMS.API_HostAddress}}/weatherforecast/
+
+#Great endpoint testing place without Curl,Postman
+
+@host = https://localhost:7001
+
+### 🔐 Login to get token
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+
+###
+
+### 📄 Get all articles (replace YOUR_TOKEN after login)
+GET {{host}}/api/articles
+Authorization: Bearer YOUR_TOKEN
 Accept: application/json
 
 ###
+
+### 📄 Get article by ID
+GET {{host}}/api/articles/1
+Authorization: Bearer YOUR_TOKEN
+Accept: application/json
+
+###
+
+### 📝 Create new article
+POST {{host}}/api/articles
+Authorization: Bearer YOUR_TOKEN
+Content-Type: application/json
+
+{
+  "title": "New Article Title",
+  "content": "This is the body of the article"
+}
+
+###
+
+### ✏️ Update article by ID
+PUT {{host}}/api/articles/1
+Authorization: Bearer YOUR_TOKEN
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Updated Title",
+  "content": "Updated content for this article"
+}
+
+###
+
+### ❌ Delete article by ID
+DELETE {{host}}/api/articles/1
+Authorization: Bearer YOUR_TOKEN
