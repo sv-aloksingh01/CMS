@@ -21,9 +21,9 @@ namespace CMS.API.Controllers
         [HttpGet]
         [AllowAnonymous]
         [ProducesResponseType(typeof(List<ArticleResponseDto>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(string? category)
         {
-            var articles = await _articleService.GetAllAsync();
+            var articles = await _articleService.GetAllAsync(category);
             return Ok(articles);
         }
 

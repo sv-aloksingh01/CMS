@@ -9,11 +9,13 @@ import {
   BookOpen, 
   Database, 
   BarChart3,
-  Zap
+  Zap,
+  Briefcase
 } from 'lucide-react';
 
 const categories = [
   { name: 'Trending', path: '/articles/trending', icon: TrendingUp, color: 'text-red-500' },
+  { name: 'Job Preparations', path: '/articles/category/job-preparations', icon: Briefcase, color: 'text-emerald-500' },
   { name: 'History', path: '/articles/category/history', icon: Clock, color: 'text-amber-500' },
   { name: 'Geography', path: '/articles/category/geography', icon: Globe, color: 'text-green-500' },
   { name: 'Technology', path: '/articles/category/technology', icon: Cpu, color: 'text-blue-500' },
@@ -97,7 +99,9 @@ function CategoryMenu({ isOpen, onClose }: CategoryMenuProps) {
           {/* Footer */}
           <div className="p-4 border-t border-gray-200">
             <div className="text-xs text-gray-500 text-center">
-              <b><p className="mt-1">More exciting content coming soon!</p></b>
+              <p>Browse {categories.length - 1} categories</p>
+              <p className="mt-1">+ Trending articles</p>
+              <p className="mt-1">+ Trending articles</p>
             </div>
           </div>
         </div>

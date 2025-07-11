@@ -1,4 +1,5 @@
 export const CATEGORIES = [
+  { id: 0, name: 'Job Preparations', value: 'job-preparations' },
   { id: 1, name: 'History', value: 'history' },
   { id: 2, name: 'Geography', value: 'geography' },
   { id: 3, name: 'Technology', value: 'technology' },

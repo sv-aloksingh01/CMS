@@ -16,13 +16,21 @@ namespace CMS.Service.Services
             _context = context;
         }
 
-        public async Task<List<ArticleResponseDto>> GetAllAsync()
+        public async Task<List<ArticleResponseDto>> GetAllAsync(string? category)
         {
-            return await _context.Articles
+            var query = _context.Articles
                 .Where(a => a.IsActive)
                 .Include(a => a.Category)
                 .Include(a => a.ArticleTags)
                     .ThenInclude(at => at.Tag)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                query = query.Where(a => a.Category.Name == category);
+            }
+
+            return await query
                 .Select(a => new ArticleResponseDto
                 {
                     Id = a.Id,
@@ -31,8 +39,10 @@ namespace CMS.Service.Services
                     CategoryName = a.Category.Name,
                     Tags = a.ArticleTags.Select(at => at.Tag.Name).ToList(),
                     CreatedAt = a.CreatedAt
-                }).ToListAsync();
+                })
+                .ToListAsync();
         }
+
 
         public async Task<ArticleResponseDto?> GetByIdAsync(int id)
         {

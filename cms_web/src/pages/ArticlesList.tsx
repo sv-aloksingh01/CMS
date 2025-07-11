@@ -25,7 +25,16 @@ function ArticlesList() {
 
   const fetchArticles = async (categoryFilter?: string) => {
     try {
-      const endpoint = categoryFilter ? `/Articles?category=${categoryFilter}` : '/Articles';
+      let endpoint = '/Articles';
+      
+      if (categoryFilter === 'trending') {
+        // For trending, you might want a specific endpoint or parameter
+        endpoint = '/Articles?trending=true';
+      } else if (categoryFilter) {
+        // For category filtering, use the category name from your constants
+        endpoint = `/Articles?category=${categoryFilter}`;
+      }
+      
       const response = await api.get(endpoint);
       setArticles(response.data);
     } catch (err) {
@@ -51,6 +60,7 @@ function ArticlesList() {
     if (category === 'trending') return 'The most popular and engaging articles right now.';
     
     const categoryDescriptions: { [key: string]: string } = {
+      'job-preparations': 'Prepare for your dream job with interview tips, resume guides, and career advice.',
       'history': 'Explore fascinating stories and events from the past.',
       'geography': 'Discover the world through physical and human geography.',
       'technology': 'Stay updated with the latest technological innovations and trends.',

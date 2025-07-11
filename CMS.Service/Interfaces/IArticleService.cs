@@ -9,7 +9,7 @@ namespace CMS.Service.Interfaces
 {
     public interface IArticleService
     {
-        Task<List<ArticleResponseDto>> GetAllAsync();
+        Task<List<ArticleResponseDto>> GetAllAsync(string? category);
         Task<ArticleResponseDto?> GetByIdAsync(int id);
         Task<int> CreateAsync(CreateArticleRequestDto request);
         Task<bool> UpdateArticleAsync(int id, UpdateArticleRequestDto dto);

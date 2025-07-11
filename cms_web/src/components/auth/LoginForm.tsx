@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Eye, EyeOff, Lock, User, LogIn } from 'lucide-react';
 import api from '../../api/api';
 
 function LoginForm() {
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -16,6 +17,13 @@ function LoginForm() {
     password: '',
   });
   const navigate = useNavigate();
+
+  // Check if user was redirected due to session expiry
+  React.useEffect(() => {
+    if (searchParams.get('expired') === 'true') {
+      setError('Your session has expired. Please log in again.');
+    }
+  }, [searchParams]);
 
   const validateField = (name: string, value: string) => {
     switch (name) {
@@ -92,12 +100,25 @@ function LoginForm() {
       });
 
       console.log('Login response:', response);
-      const { token } = response.data;
+      const { token, user } = response.data;
+      console.log('Login successful, storing token and redirecting...');
       localStorage.setItem('token', token);
-      navigate('/admin');
+      
+      // Force a page reload to ensure the authentication state is updated
+      window.location.href = '/admin';
     } catch (err: any) {
       console.error('Login error:', err);
-      setError(err.response?.data?.message || 'Invalid username or password');
+      if (err.response?.status === 401) {
+        setError('Invalid username or password. Please check your credentials and try again.');
+      } else if (err.response?.status === 403) {
+        setError('Access denied. You do not have permission to access the admin panel.');
+      } else if (err.response?.status >= 500) {
+        setError('Server error. Please try again later or contact support.');
+      } else if (err.code === 'NETWORK_ERROR' || !err.response) {
+        setError('Unable to connect to the server. Please check your internet connection.');
+      } else {
+        setError(err.response?.data?.message || 'Login failed. Please try again.');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -116,8 +137,17 @@ function LoginForm() {
 
       {/* Error Message */}
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-red-600 text-sm font-medium">{error}</p>
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg animate-shake">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="ml-3">
+              <p className="text-red-800 text-sm font-medium">{error}</p>
+            </div>
+          </div>
         </div>
       )}
 

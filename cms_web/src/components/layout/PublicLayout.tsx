@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, LogIn, Menu, X } from 'lucide-react';
 import CategoryMenu from '../navigation/CategoryMenu';
+import TopNavigation from '../navigation/TopNavigation';
+import Footer from './Footer';
 
 interface PublicLayoutProps {
   children: ReactNode;
@@ -40,7 +42,7 @@ function PublicLayout({ children }: PublicLayoutProps) {
 
                 <Link to="/articles" className="flex items-center">
                   <FileText className="h-8 w-8 text-blue-600 mr-3" />
-                  <h1 className="text-xl font-semibold text-gray-900">DecodeGk</h1>
+                  <h1 className="text-xl font-semibold text-gray-900">CMS Articles</h1>
                 </Link>
               </div>
               
@@ -66,10 +68,16 @@ function PublicLayout({ children }: PublicLayoutProps) {
           </div>
         </header>
 
+        {/* Top Navigation */}
+        <TopNavigation />
+
         {/* Main Content */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {children}
         </main>
+        
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );
