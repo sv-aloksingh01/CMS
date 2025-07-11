@@ -61,7 +61,7 @@ function CategoryMenu({ isOpen, onClose }: CategoryMenuProps) {
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Topics</h2>
+            <h2 className="text-xl font-bold text-gray-900">Explore Topics</h2>
             <p className="text-sm text-gray-600 mt-1">Find what interests you</p>
           </div>
 
@@ -108,8 +108,8 @@ function CategoryMenu({ isOpen, onClose }: CategoryMenuProps) {
           {/* Footer */}
           <div className="p-4 border-t border-gray-200">
             <div className="text-xs text-gray-500 text-center">
-              <p>Browse {categories.length - 1} categories</p>
-              <p className="mt-1">+ More content coming soon</p>
+              {/* <p>Browse {categories.length - 1} categories</p> */}
+              <p className="mt-1">Additional content coming soon</p>
             </div>
           </div>
         </div>

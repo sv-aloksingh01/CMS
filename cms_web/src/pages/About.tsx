@@ -8,7 +8,7 @@ function About() {
       <div className="max-w-4xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">About CMS Articles</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">About DecodeGk</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             We're passionate about delivering high-quality, informative content that educates, 
             inspires, and keeps you informed about the world around you.
@@ -24,7 +24,7 @@ function About() {
             <h2 className="text-2xl font-bold text-gray-900">Our Mission</h2>
           </div>
           <p className="text-gray-600 leading-relaxed">
-            At CMS Articles, our mission is to democratize access to quality information across diverse fields 
+            At DecodeGk, our mission is to democratize access to quality information across diverse fields 
             of knowledge. We believe that everyone deserves access to well-researched, expertly written content 
             that can help them learn, grow, and make informed decisions. Whether you're a student, professional, 
             or simply curious about the world, we're here to provide you with reliable, engaging content.

@@ -21,7 +21,7 @@ function PrivacyPolicy() {
         <div className="prose prose-lg max-w-none">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
             <p className="text-blue-800 mb-0">
-              At CMS Articles, we are committed to protecting your privacy and ensuring the security of your personal information. 
+              At DecodeGk, we are committed to protecting your privacy and ensuring the security of your personal information. 
               This Privacy Policy explains how we collect, use, and safeguard your data when you use our website and services.
             </p>
           </div>

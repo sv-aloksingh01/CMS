@@ -11,7 +11,7 @@ function Home() {
         <section className="text-center py-12">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Welcome to <span className="text-blue-600">CMS Articles</span>
+              Welcome to <span className="text-blue-600">DecodeGk</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Discover expertly curated articles covering technology, science, history, and more. 
@@ -37,10 +37,11 @@ function Home() {
         </section>
 
         {/* Features Section */}
+        
         <section className="py-12">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Why Choose CMS Articles?
+              Why Choose DecodeGk?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
@@ -75,8 +76,10 @@ function Home() {
             </div>
           </div>
         </section>
+        
 
         {/* Categories Preview */}
+        {/*
         <section className="py-12 bg-gray-50 rounded-2xl">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
@@ -107,8 +110,10 @@ function Home() {
             </div>
           </div>
         </section>
+            */}
 
         {/* CTA Section */}
+        {/*
         <section className="text-center py-12">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -126,6 +131,7 @@ function Home() {
             </Link>
           </div>
         </section>
+            */}
       </div>
     </PublicLayout>
   );
