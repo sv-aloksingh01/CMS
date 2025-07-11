@@ -27,7 +27,14 @@ namespace CMS.Service.Services
 
             if (!string.IsNullOrEmpty(category))
             {
-                query = query.Where(a => a.Category.Name == category);
+                if (category.ToLower() == "trending")
+                {
+                    query = query.Where(a => a.IsTrending == true);
+                }
+                else
+                {
+                    query = query.Where(a => a.Category.Name == category);
+                }
             }
 
             return await query

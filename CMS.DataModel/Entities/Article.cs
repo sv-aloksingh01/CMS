@@ -58,4 +58,5 @@ public partial class Article
     [InverseProperty("Articles")]
     public virtual Category Category { get; set; } = null!;
     public bool IsActive { get; set; }
+    public bool IsTrending { get; set; }
 }
