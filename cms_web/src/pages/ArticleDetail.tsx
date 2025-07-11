@@ -122,12 +122,85 @@ function ArticleDetail() {
 
             {/* Article Body */}
             <div className="prose prose-lg max-w-none">
-              <div className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-                {article.content}
-              </div>
+              <div 
+                className="text-gray-700 leading-relaxed article-content"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
             </div>
           </div>
         </article>
+        
+        <style jsx>{`
+          .article-content h1,
+          .article-content h2,
+          .article-content h3,
+          .article-content h4,
+          .article-content h5,
+          .article-content h6 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            line-height: 1.25;
+          }
+          
+          .article-content h1 { font-size: 2em; }
+          .article-content h2 { font-size: 1.5em; }
+          .article-content h3 { font-size: 1.25em; }
+          
+          .article-content p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+          }
+          
+          .article-content ul,
+          .article-content ol {
+            margin-bottom: 1em;
+            padding-left: 1.5em;
+          }
+          
+          .article-content li {
+            margin-bottom: 0.5em;
+          }
+          
+          .article-content blockquote {
+            border-left: 4px solid #e5e7eb;
+            padding-left: 1em;
+            margin: 1em 0;
+            font-style: italic;
+            color: #6b7280;
+          }
+          
+          .article-content code {
+            background-color: #f3f4f6;
+            padding: 0.125em 0.25em;
+            border-radius: 0.25em;
+            font-size: 0.875em;
+          }
+          
+          .article-content pre {
+            background-color: #f3f4f6;
+            padding: 1em;
+            border-radius: 0.5em;
+            overflow-x: auto;
+            margin: 1em 0;
+          }
+          
+          .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5em;
+            margin: 1em 0;
+          }
+          
+          .article-content a {
+            color: #2563eb;
+            text-decoration: underline;
+          }
+          
+          .article-content a:hover {
+            color: #1d4ed8;
+          }
+        `}</style>
       </div>
     </PublicLayout>
   );

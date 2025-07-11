@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft, Save } from 'lucide-react';
 import AdminLayout from '../components/layout/AdminLayout';
+import RichTextEditor from '../components/editor/RichTextEditor';
+import CategorySelect from '../components/ui/CategorySelect';
 import api from '../api/api';
 
 function CreateArticle() {
@@ -16,11 +18,25 @@ function CreateArticle() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
+    }));
+  };
+
+  const handleContentChange = (content: string) => {
+    setFormData(prev => ({
+      ...prev,
+      content
+    }));
+  };
+
+  const handleCategoryChange = (categoryName: string) => {
+    setFormData(prev => ({
+      ...prev,
+      categoryName
     }));
   };
 
@@ -68,7 +84,7 @@ function CreateArticle() {
 
   return (
     <AdminLayout>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center">
@@ -111,16 +127,12 @@ function CreateArticle() {
           {/* Category */}
           <div>
             <label htmlFor="categoryName" className="block text-sm font-medium text-gray-700 mb-2">
-              Category
+              Category *
             </label>
-            <input
-              type="text"
-              id="categoryName"
-              name="categoryName"
+            <CategorySelect
               value={formData.categoryName}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Enter category name"
+              onChange={handleCategoryChange}
+              required
             />
           </div>
 
@@ -164,20 +176,15 @@ function CreateArticle() {
             <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
               Content *
             </label>
-            <textarea
-              id="content"
-              name="content"
+            <RichTextEditor
               value={formData.content}
-              onChange={handleInputChange}
-              rows={12}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical"
+              onChange={handleContentChange}
               placeholder="Write your article content here..."
-              required
             />
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-end">
+          <div className="flex justify-end pt-4">
             <button
               type="submit"
               disabled={loading}
