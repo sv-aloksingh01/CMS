@@ -14,16 +14,16 @@ import {
 } from 'lucide-react';
 
 const categories = [
-  { name: 'Trending', path: '/articles/trending', icon: TrendingUp, color: 'text-red-500' },
-  { name: 'Job Preparations', path: '/articles/category/job-preparations', icon: Briefcase, color: 'text-emerald-500' },
-  { name: 'History', path: '/articles/category/history', icon: Clock, color: 'text-amber-500' },
-  { name: 'Geography', path: '/articles/category/geography', icon: Globe, color: 'text-green-500' },
-  { name: 'Technology', path: '/articles/category/technology', icon: Cpu, color: 'text-blue-500' },
-  { name: 'General Knowledge', path: '/articles/category/general-knowledge', icon: BookOpen, color: 'text-purple-500' },
-  { name: 'Data Engineering', path: '/articles/category/data-engineering', icon: Database, color: 'text-indigo-500' },
-  { name: 'Data Science', path: '/articles/category/data-science', icon: BarChart3, color: 'text-cyan-500' },
-  { name: 'Machine Learning', path: '/articles/category/machine-learning', icon: Brain, color: 'text-pink-500' },
-  { name: 'Artificial Intelligence', path: '/articles/category/artificial-intelligence', icon: Zap, color: 'text-orange-500' },
+  { name: 'Trending', icon: TrendingUp, color: 'text-red-500' },
+  { name: 'Job Preparations', icon: Briefcase, color: 'text-emerald-500' },
+  { name: 'History', icon: Clock, color: 'text-amber-500' },
+  { name: 'Geography', icon: Globe, color: 'text-green-500' },
+  { name: 'Technology', icon: Cpu, color: 'text-blue-500' },
+  { name: 'General Knowledge', icon: BookOpen, color: 'text-purple-500' },
+  { name: 'Data Engineering', icon: Database, color: 'text-indigo-500' },
+  { name: 'Data Science', icon: BarChart3, color: 'text-cyan-500' },
+  { name: 'Machine Learning', icon: Brain, color: 'text-pink-500' },
+  { name: 'Artificial Intelligence', icon: Zap, color: 'text-orange-500' },
 ];
 
 interface CategoryMenuProps {
@@ -53,8 +53,8 @@ function CategoryMenu({ isOpen, onClose }: CategoryMenuProps) {
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Categories</h2>
-            <p className="text-sm text-gray-600 mt-1">Explore articles by topic</p>
+            <h2 className="text-xl font-bold text-gray-900">Topics</h2>
+            <p className="text-sm text-gray-600 mt-1">Find what interests you</p>
           </div>
 
           {/* Categories List */}
@@ -62,12 +62,13 @@ function CategoryMenu({ isOpen, onClose }: CategoryMenuProps) {
             <ul className="space-y-1 px-4">
               {categories.map((category) => {
                 const Icon = category.icon;
-                const isActive = location.pathname === category.path;
-                
+                const encodedPath = `/articles/category/${encodeURIComponent(category.name)}`;
+                const isActive = location.pathname === encodedPath;
+
                 return (
                   <li key={category.name}>
                     <Link
-                      to={category.path}
+                      to={encodedPath}
                       onClick={onClose}
                       className={`
                         flex items-center px-4 py-3 rounded-lg transition-all duration-200 group
@@ -100,8 +101,7 @@ function CategoryMenu({ isOpen, onClose }: CategoryMenuProps) {
           <div className="p-4 border-t border-gray-200">
             <div className="text-xs text-gray-500 text-center">
               <p>Browse {categories.length - 1} categories</p>
-              <p className="mt-1">+ Trending articles</p>
-              <p className="mt-1">+ Trending articles</p>
+              <p className="mt-1">+ More content coming soon</p>
             </div>
           </div>
         </div>
