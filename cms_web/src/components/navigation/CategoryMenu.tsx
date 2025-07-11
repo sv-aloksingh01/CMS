@@ -25,12 +25,12 @@ const categories = [
   { name: 'Business Ideas', icon: Lightbulb, color: 'text-orange-600' },
   { name: 'History', icon: Clock, color: 'text-amber-500' },
   { name: 'Geography', icon: Globe, color: 'text-green-500' },
-  { name: 'Technology', icon: Cpu, color: 'text-blue-500' },
+  // { name: 'Technology', icon: Cpu, color: 'text-blue-500' },
   { name: 'General Knowledge', icon: BookOpen, color: 'text-purple-500' },
-  { name: 'Data Engineering', icon: Database, color: 'text-indigo-500' },
-  { name: 'Data Science', icon: BarChart3, color: 'text-cyan-500' },
-  { name: 'Machine Learning', icon: Brain, color: 'text-pink-500' },
-  { name: 'Artificial Intelligence', icon: Zap, color: 'text-orange-500' },
+  // { name: 'Data Engineering', icon: Database, color: 'text-indigo-500' },
+  // { name: 'Data Science', icon: BarChart3, color: 'text-cyan-500' },
+  // { name: 'Machine Learning', icon: Brain, color: 'text-pink-500' },
+  // { name: 'Artificial Intelligence', icon: Zap, color: 'text-orange-500' },
   { name: 'Generative AI', icon: Sparkles, color: 'text-fuchsia-600' }
 ];
 
