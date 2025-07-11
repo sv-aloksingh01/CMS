@@ -60,16 +60,21 @@ function ArticlesList() {
     if (category === 'trending') return 'The most popular and engaging articles right now.';
     
     const categoryDescriptions: { [key: string]: string } = {
-      'job-preparations': 'Prepare for your dream job with interview tips, resume guides, and career advice.',
-      'history': 'Explore fascinating stories and events from the past.',
-      'geography': 'Discover the world through physical and human geography.',
-      'technology': 'Stay updated with the latest technological innovations and trends.',
-      'general-knowledge': 'Expand your knowledge with diverse topics and interesting facts.',
-      'data-engineering': 'Learn about building robust data infrastructure and pipelines.',
-      'data-science': 'Dive into statistical analysis, machine learning, and data insights.',
-      'machine-learning': 'Understand algorithms, models, and AI applications.',
-      'artificial-intelligence': 'Explore the future of AI and its impact on society.'
-    };
+  'career-start': 'Kickstart your professional journey with career planning tips and guidance.',
+  'job-preparation': 'Prepare for your dream job with interview tips, resume guides, and career advice.',
+  'skill-development': 'Sharpen your skills with practical tutorials, soft skills, and technical know-how.',
+  'business-ideas': 'Explore innovative business ideas, startup strategies, and side hustle opportunities.',
+  'history': 'Explore fascinating stories and events from the past.',
+  'geography': 'Discover the world through physical and human geography.',
+  'technology': 'Stay updated with the latest technological innovations and trends.',
+  'general-knowledge': 'Expand your knowledge with diverse topics and interesting facts.',
+  'data-engineering': 'Learn about building robust data infrastructure and pipelines.',
+  'data-science': 'Dive into statistical analysis, machine learning, and data insights.',
+  'machine-learning': 'Understand algorithms, models, and AI applications.',
+  'artificial-intelligence': 'Explore the future of AI and its impact on society.',
+  'generative-ai': 'Learn how AI generates content, code, images, and more using advanced models.'
+};
+
     
     return categoryDescriptions[category] || 'Explore articles in this category.';
   };

@@ -10,12 +10,19 @@ import {
   Database, 
   BarChart3,
   Zap,
-  Briefcase
+  Briefcase,
+  FileText,
+  Wrench,
+  Lightbulb,
+  Sparkles
 } from 'lucide-react';
 
 const categories = [
   { name: 'Trending', icon: TrendingUp, color: 'text-red-500' },
-  { name: 'Job Preparations', icon: Briefcase, color: 'text-emerald-500' },
+  { name: 'Career Start', icon: Briefcase, color: 'text-emerald-600' },
+  { name: 'Job Preparation', icon: FileText, color: 'text-yellow-600' },
+  { name: 'Skill Development', icon: Wrench, color: 'text-teal-600' },
+  { name: 'Business Ideas', icon: Lightbulb, color: 'text-orange-600' },
   { name: 'History', icon: Clock, color: 'text-amber-500' },
   { name: 'Geography', icon: Globe, color: 'text-green-500' },
   { name: 'Technology', icon: Cpu, color: 'text-blue-500' },
@@ -24,6 +31,7 @@ const categories = [
   { name: 'Data Science', icon: BarChart3, color: 'text-cyan-500' },
   { name: 'Machine Learning', icon: Brain, color: 'text-pink-500' },
   { name: 'Artificial Intelligence', icon: Zap, color: 'text-orange-500' },
+  { name: 'Generative AI', icon: Sparkles, color: 'text-fuchsia-600' }
 ];
 
 interface CategoryMenuProps {
