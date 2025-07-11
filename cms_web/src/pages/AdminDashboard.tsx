@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Edit, Trash2, Eye } from 'lucide-react';
 import AdminLayout from '../components/layout/AdminLayout';
+import { getCleanPreview } from '../utils/textUtils';
 import api from '../api/api';
 
 interface Article {
@@ -47,11 +48,6 @@ function AdminDashboard() {
     } finally {
       setDeleteLoading(null);
     }
-  };
-
-  const truncateContent = (content: string, maxLength: number = 100) => {
-    if (content.length <= maxLength) return content;
-    return content.substring(0, maxLength) + '...';
   };
 
   if (loading) {
@@ -138,7 +134,7 @@ function AdminDashboard() {
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm text-gray-600 max-w-xs">
-                          {truncateContent(article.content)}
+                          {getCleanPreview(article.content, 100)}
                         </div>
                       </td>
                       <td className="px-6 py-4">

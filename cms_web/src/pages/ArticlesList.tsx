@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Calendar, Tag, ChevronRight, TrendingUp } from 'lucide-react';
 import PublicLayout from '../components/layout/PublicLayout';
+import { getCleanPreview } from '../utils/textUtils';
 import api from '../api/api';
 
 interface Article {
@@ -32,11 +33,6 @@ function ArticlesList() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const truncateContent = (content: string, maxLength: number = 150) => {
-    if (content.length <= maxLength) return content;
-    return content.substring(0, maxLength) + '...';
   };
 
   const getCategoryTitle = () => {
@@ -149,7 +145,7 @@ function ArticlesList() {
                   </h3>
                   
                   <p className="text-gray-600 mb-6 leading-relaxed">
-                    {truncateContent(article.content)}
+                    {getCleanPreview(article.content, 200)}
                   </p>
                   
                   {article.tags && article.tags.length > 0 && (
