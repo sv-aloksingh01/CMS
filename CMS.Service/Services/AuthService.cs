@@ -37,7 +37,6 @@ namespace CMS.Service.Services
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
                 return new LoginResponseDto();
 
-            // ✅ Use the existing method
             string token =  GenerateJwtToken(user);
 
             LoginResponseDto loginResponseDto = new LoginResponseDto
@@ -54,36 +53,6 @@ namespace CMS.Service.Services
             return loginResponseDto;
         }
 
-        /*
-        public async Task<string> AuthenticateAsync(string username, string password)
-        {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
-
-            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
-                return string.Empty;
-
-            // Token generation
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["JwtSettings:Key"]);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(ClaimTypes.Name, user.Username),
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(double.Parse(_configuration["JwtSettings:ExpiryMinutes"])),
-                Issuer = _configuration["JwtSettings:Issuer"],
-                Audience = _configuration["JwtSettings:Audience"],
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
-        */
-
         private string GenerateJwtToken(User user)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
@@ -93,7 +62,6 @@ namespace CMS.Service.Services
             {
         new Claim(JwtRegisteredClaimNames.Sub, user.Username),
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        // You can add more claims later (like roles)
     };
 
             var token = new JwtSecurityToken(

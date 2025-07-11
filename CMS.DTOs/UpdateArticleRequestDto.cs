@@ -12,6 +12,6 @@ namespace CMS.DTOs
         public string Content { get; set; } = null!;
         public string CategoryName { get; set; } = null!;
         public List<string>? TagNames { get; set; } = new();
-        //public string? Slug { get; set; }  // slug for SEO, optional
+        //public string? Slug { get; set; }  // slug for SEO, optional 
     }
 }

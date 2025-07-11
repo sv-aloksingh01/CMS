@@ -44,9 +44,6 @@ namespace CMS.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create([FromBody] CreateArticleRequestDto request)
         {
-            //if (!ModelState.IsValid)
-            //    return BadRequest(ModelState);
-
             var articleId = await _articleService.CreateAsync(request);
             var article = await _articleService.GetByIdAsync(articleId);
             return CreatedAtAction(nameof(GetById), new { id = articleId }, article);

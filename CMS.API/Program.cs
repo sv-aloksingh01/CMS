@@ -14,13 +14,8 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-//builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
 var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
-
 
 //Fluent validations
 builder.Services.AddCustomValidation();
@@ -30,13 +25,9 @@ builder.Services.AddDbContext<CMSContext>(options =>
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IArticleService, ArticleService>();
-//builder.Services.AddAutoMapper(typeof(Program)); // optional
 
-//builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-
 
 // 1. JWT Settings
 var jwtConfigSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
@@ -90,15 +81,6 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
-
-
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("AllowFrontend",
-//        policy => policy.WithOrigins("http://localhost:3000") // React dev server
-//                         .AllowAnyHeader()
-//                         .AllowAnyMethod());
-//});
 
 // CORS setup
 builder.Services.AddCors(options =>
