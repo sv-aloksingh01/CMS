@@ -10,6 +10,17 @@ const api = axios.create({
   },
 });
 
+
+// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://localhost:7001/api';
+
+// const api = axios.create({
+//   baseURL: API_BASE_URL,
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// });
+
+
 // Request interceptor to add auth token (only for protected routes)
 api.interceptors.request.use(
   (config) => {

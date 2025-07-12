@@ -83,17 +83,25 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // CORS setup
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowFrontend", policy =>
+//    {
+//        policy.WithOrigins("http://localhost:5173")
+//              .AllowAnyHeader()
+//              .AllowAnyMethod()
+//              .AllowCredentials(); // only if you're using cookies
+//    });
+//});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
-    {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("https://decodegk.com")
               .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials(); // only if you're using cookies
-    });
+    );
 });
-
 
 
 builder.Services.AddAuthorization();
